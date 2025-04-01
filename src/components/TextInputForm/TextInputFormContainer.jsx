@@ -11,13 +11,13 @@ function TextInputFormContainer(){
 
     function handleFormSubmit(event){
         event.preventDefault();
-        // console.log("Form Submitted");
+        
         if(value){
             console.log('Form Submitted ',value);
+
             //if we have something in value then we want to go the play page
-            setTimeout(()=>navigate('/play'),5000);
-            // navigate('/play');
-            // console.log(value);
+            
+            navigate('/play',{state:{ wordSelected:value}});
         }
     }
 
