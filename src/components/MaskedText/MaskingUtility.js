@@ -13,7 +13,7 @@ export function getAllCharacters(word, usedLetters) {
     usedLetters = usedLetters.map(letter => letter.toUpperCase()); // ['b', 'e'] -> ['B', 'E']
 
     const guessedLetters = new Set(usedLetters); // {'B', 'E'}
-    const characters = word.toUpperCase().split('').map(char => {
+    const characters = word?.toUpperCase().split('').map(char => {
         if (guessedLetters.has(char)) {
             return char;
         }

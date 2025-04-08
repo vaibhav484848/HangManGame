@@ -6,7 +6,7 @@ function MasKedText({text,guessedLetters}){
 
     return (
         <div>
-            {maskedString.map((letter,idx)=>{
+            {maskedString?.map((letter,idx)=>{
                 return(
                     <span key={idx} className="inline-block mx-1 " >
                         {letter}

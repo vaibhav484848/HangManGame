@@ -1,8 +1,9 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import MasKedText from "../components/MaskedText/MaskedText";
 import LetterButtons from "../components/LetterButtons/LetterButton";
 import { useState } from "react";
 import HangMan from "../components/HangMan/HangMan";
+import Button from "../components/Button/Button";
 
 function PlayGame(){
     const{state} =useLocation();
@@ -27,12 +28,17 @@ function PlayGame(){
 
     return(
         <>
-            <h1>PlayGame {state.wordSelected}</h1>
+            <h1>PlayGame {state?.wordSelected}</h1>
 
-            <MasKedText text={state.wordSelected} guessedLetters={guessedLetters} />
-            <LetterButtons text={state.wordSelected} guessedLetters={guessedLetters} onLetterClick={onLetterClick} />
+            <MasKedText text={state?.wordSelected} guessedLetters={guessedLetters} />
+            <LetterButtons text={state?.wordSelected} guessedLetters={guessedLetters} onLetterClick={onLetterClick} />
 
             <HangMan step={step}/>
+            <br />
+
+            <Link to='/'> 
+            <div><Button text={"HomePage"}/></div>
+            </Link>
         </>
     )
 }

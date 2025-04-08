@@ -2,7 +2,7 @@ const ALPHABETS="QWERTYUIOPASDFGHJKLZXCVBNM";
 
 function LetterButtons({text,guessedLetters,onLetterClick,updateStep}){
     
-    const originalLetters= new Set(text.toUpperCase().split(''));
+    const originalLetters= new Set(text?.toUpperCase().split(''));
     const guessedLetterSet= new Set(guessedLetters);
 
     // function onClickHandler(e){
